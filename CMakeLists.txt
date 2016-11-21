@@ -9,7 +9,6 @@ find_package(catkin REQUIRED COMPONENTS
   gazebo_plugins
   gazebo_ros
   gazebo_ros_control
-  mastering_ros_robot_description_pkg
   betsy_setup
 )
 

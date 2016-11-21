@@ -4,20 +4,20 @@
 <launch>
 
 <!--
-  <include file="$(find diff_wheeled_robot_gazebo)/launch/includes/velocity_smoother.launch.xml"/>
-  <include file="$(find diff_wheeled_robot_gazebo)/launch/includes/safety_controller.launch.xml"/>
+  <include file="$(find betsy_simulation)/launch/includes/velocity_smoother.launch.xml"/>
+  <include file="$(find betsy_simulation)/launch/includes/safety_controller.launch.xml"/>
 -->
 
   <arg name="odom_topic" default="odom" />
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <rosparam file="$(find diff_wheeled_robot_gazebo)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find diff_wheeled_robot_gazebo)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find diff_wheeled_robot_gazebo)/param/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find diff_wheeled_robot_gazebo)/param/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find diff_wheeled_robot_gazebo)/param/base_local_planner_params.yaml" command="load" />
-    <rosparam file="$(find diff_wheeled_robot_gazebo)/param/dwa_local_planner_params.yaml" command="load" />
-    <rosparam file="$(find diff_wheeled_robot_gazebo)/param/move_base_params.yaml" command="load" />
+    <rosparam file="$(find betsy_simulation)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find betsy_simulation)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find betsy_simulation)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find betsy_simulation)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find betsy_simulation)/param/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find betsy_simulation)/param/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find betsy_simulation)/param/move_base_params.yaml" command="load" />
 
 <!--
     <remap from="cmd_vel" to="navigation_velocity_smoother/raw_cmd_vel"/>

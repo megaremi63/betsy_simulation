@@ -32,10 +32,10 @@
     <param name="ymax" value="50.0"/>
   make the starting size small for the benefit of the Android client's memory...
   -->
-    <param name="xmin" value="-10.0"/>
-    <param name="ymin" value="-10.0"/>
-    <param name="xmax" value="10.0"/>
-    <param name="ymax" value="10.0"/>
+    <param name="xmin" value="-1.0"/>
+    <param name="ymin" value="-1.0"/>
+    <param name="xmax" value="1.0"/>
+    <param name="ymax" value="1.0"/>
 
     <param name="delta" value="0.05"/>
     <param name="llsamplerange" value="0.01"/>
@@ -44,20 +44,4 @@
     <param name="lasamplestep" value="0.005"/>
     <remap from="scan" to="$(arg scan_topic)"/>
   </node>
-
-
-
-  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <rosparam file="$(find betsy_simulation)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find betsy_simulation)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find betsy_simulation)/param/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find betsy_simulation)/param/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find betsy_simulation)/param/base_local_planner_params.yaml" command="load" />
-    <rosparam file="$(find betsy_simulation)/param/dwa_local_planner_params.yaml" command="load" />
-    <rosparam file="$(find betsy_simulation)/param/move_base_params.yaml" command="load" />
-
-<!--    <remap from="cmd_vel" to="navigation_velocity_smoother/raw_cmd_vel"/>
-    <remap from="odom" to="$(arg odom_topic)"/> -->
-  </node>
-
 </launch>
